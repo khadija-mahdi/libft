@@ -6,7 +6,7 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 21:56:08 by kmahdi            #+#    #+#             */
-/*   Updated: 2022/10/28 13:30:10 by kmahdi           ###   ########.fr       */
+/*   Updated: 2022/10/28 14:39:19 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*j;
 
+	if (!s)
+		return (NULL);
 	i = 0 ;
 	if (start >= ft_strlen(s))
 		return (ft_calloc(1, 1));

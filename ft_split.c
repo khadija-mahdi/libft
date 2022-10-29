@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_words_count(const char *s, char c)
+int	ft_words_count(const char *s, char c)
 {
 	size_t	i;
 	int		len;
@@ -33,7 +33,7 @@ static int	ft_words_count(const char *s, char c)
 	return (len);
 }
 
-static int	get_world_len(char const *sm, char c)
+int	get_world_len(char const *sm, char c)
 {
 	int	len;
 
@@ -43,9 +43,25 @@ static int	get_world_len(char const *sm, char c)
 	return (len);
 }
 
+char **free_stuff(char ** k)
+{
+	int i;
+
+	i = 0;
+	while (k[i])
+	{
+		free(k[i]);
+		k[i] = NULL;
+		i++;
+	}
+	free(k);
+	k = NULL;
+	return (k);
+	
+}
 char	**ft_split(char const *s, char c)
 {
-	int		index;
+	int		i;
 	char	**k;
 
 	if (!s)
@@ -53,18 +69,19 @@ char	**ft_split(char const *s, char c)
 	k = malloc((ft_words_count(s, c) + 1) * (sizeof(char *)));
 	if (!k)
 		return (NULL);
-	index = 0;
+	i = 0;
 	while (*s)
 	{
 		if (*s == c)
 			s++;
 		else
 		{
-			k[index] = ft_substr(s, 0, get_world_len(s, c));
-			index++;
+			k[i++] = ft_substr(s, 0, get_world_len(s, c));
+			if (!k)
+				return(free_stuff(k));
 			s += get_world_len(s, c);
 		}
 	}
-	k[index] = 0;
+	k[i] = 0;
 	return (k);
 }

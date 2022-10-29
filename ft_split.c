@@ -6,13 +6,13 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:45:29 by kmahdi            #+#    #+#             */
-/*   Updated: 2022/10/27 21:50:08 by kmahdi           ###   ########.fr       */
+/*   Updated: 2022/10/29 13:16:05 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_words_count(const char *s, char c)
+static int	ft_words_count(const char *s, char c)
 {
 	size_t	i;
 	int		len;
@@ -33,7 +33,7 @@ int	ft_words_count(const char *s, char c)
 	return (len);
 }
 
-int	get_world_len(char const *sm, char c)
+static int	get_world_len(char const *sm, char c)
 {
 	int	len;
 

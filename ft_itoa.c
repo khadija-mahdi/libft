@@ -6,13 +6,13 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:46:06 by kmahdi            #+#    #+#             */
-/*   Updated: 2022/10/27 21:52:22 by kmahdi           ###   ########.fr       */
+/*   Updated: 2022/10/29 13:15:12 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_nub_len(long n)
+static int	get_nub_len(long n)
 {
 	int	len;
 

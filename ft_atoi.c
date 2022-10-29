@@ -6,14 +6,14 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 21:08:35 by kmahdi            #+#    #+#             */
-/*   Updated: 2022/10/27 22:28:05 by kmahdi           ###   ########.fr       */
+/*   Updated: 2022/10/29 13:14:39 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<limits.h>
 #include "libft.h"
 
-int	count(const char *str, int sym)
+static int	count(const char *str, int sym)
 {
 	unsigned long long	res;
 
